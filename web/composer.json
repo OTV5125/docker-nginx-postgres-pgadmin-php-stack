@@ -1,0 +1,14 @@
+{
+  "authors": [
+    {
+      "name": "example name",
+      "email": "example@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/"
+    }
+  }
+}

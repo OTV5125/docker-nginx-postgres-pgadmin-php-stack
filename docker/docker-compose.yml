@@ -1,13 +1,27 @@
 version: '3.8'
 
 services:
-  web:
-    build: ./web
+  php:
+    build: ./php-fpm:8.0
     volumes:
       - ../web:/var/www/html/
-    ports:
-    - ${WEB_PORT}:8080
+      - ../docker/socket:/socket
+#    ports:
+#    - ${WEB_PORT}:8080
     working_dir: /var/www/html
+    environment:
+      PS1: "\\u@\\h:\\w\\$$ "
+
+  nginx:
+    build: ./nginx
+    ports:
+      - ${WEB_PORT}:8080
+    volumes:
+      - ../web:/var/www/html/
+      - ../docker/socket:/socket
+      - ../docker/nginx/logs:/var/log/nginx/
+    environment:
+      PS1: "\\u@\\h:\\w\\$$ "
 
   pgadmin:
     image: dpage/pgadmin4:latest

@@ -5,7 +5,7 @@ docker-nginx-postgres-pgadmin-php-stack
 - [nginx (1.18.0)](https://nginx.org/)
 - [postgresql (11.12)](https://www.postgresql.org/)
 - [pgadmin (4)](https://www.pgadmin.org/)
-- [php (8.0.2)](https://www.php.net/)
+- [php (8.0.11)](https://www.php.net/)
 
 ### configuration file:
 /docker/.env
